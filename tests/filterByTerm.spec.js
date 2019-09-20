@@ -37,7 +37,11 @@ describe("Filter function", () => {
 			{ id: 3, url: "https://www.link3.dev" }
 		];
 		const output = [];
+		
 
-		expect(filterByTerm(input, " "));
+		expect(()=>{
+			filterByTerm(input, "")}).toThrowError(new Error('searchTerm cannot be empty'));
+		
+			
 	});
 });
